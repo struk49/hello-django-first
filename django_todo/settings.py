@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-fii6%1g=wnnx0k9kjuo4fgemilx(di(a=q11^a6p$i1b0j$i=y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-struk49-hellodjangofirs-j6b28svcgug.ws-eu104.gitpod.io']
+ALLOWED_HOSTS = ['8000-struk49-hellodjangofirs-3el2qgfdakk.ws-eu104.gitpod.io']
 
 
 # Application definition
@@ -78,7 +78,13 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-os.environ.get("DATABASE_URL")
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
